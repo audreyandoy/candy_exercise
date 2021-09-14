@@ -26,9 +26,10 @@ friend_favorites = [
 
 def create_new_candy_data_structure(data):
     candy_list = []
+
     for friend in friend_favorites:
         for candy in friend[1]:
-             candy_list.append(candy)
+            candy_list.append(candy)
 
     unique_candy_list = list(set(candy_list))
 
@@ -37,17 +38,29 @@ def create_new_candy_data_structure(data):
     for candy in candy_list:
         new_data[candy] = []
 
+    for friend in friend_favorites:
+        friend_name = friend[0] 
+        candy_list = friend[1]
+        for candy in candy_list:
+            if candy in new_data.keys():
+                new_data[candy].append(friend_name)
+
     print(new_data)
-    
+    return new_data
     
 
 create_new_candy_data_structure(friend_favorites)
 
 
+def get_friends_who_like_candy_type(data, type):
+    if type is None or data is None:
+        return "They dont even go here"
 
-def get_favorite_candy_by_name(data, name):
-    pass 
+    print(data[type])
+    return data[type] 
     
+get_friends_who_like_candy_type(create_new_candy_data_structure(friend_favorites), "lollipop")
+
 
 def create_candy_set(data):
     pass 
