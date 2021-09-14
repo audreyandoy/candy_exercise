@@ -16,7 +16,7 @@ def test_create_candy_data_structure():
     
     # Assert
     assert type(new_candy_data) == dict   
-    assert len(new_candy_data.keys()) == 8
+    assert len(new_candy_data) == 8
     assert new_candy_data["lollipop"] == ["Sally", "Bob"]
 
 
