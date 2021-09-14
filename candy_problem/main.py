@@ -42,10 +42,11 @@ def create_new_candy_data_structure(data):
 
     return new_data
 
-def get_friends_who_like_candy_type(data, type):
-    if type is None or data is None:
-        return "They dont even go here"
-    return data[type] 
+def get_friends_who_like_specific_candy(data, candy_name):
+    if candy_name is None or data is None:
+        raise ValueError('Error: data or candy_name or not of the correct data type')
+
+    return data[candy_name] 
     
 
 def create_candy_set(data):

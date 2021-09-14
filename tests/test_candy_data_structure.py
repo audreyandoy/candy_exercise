@@ -20,7 +20,7 @@ def test_create_candy_data_structure():
     assert new_candy_data["lollipop"] == ["Sally", "Bob"]
 
 
-def test_get_friends_who_like_candy_type():
+def test_get_friends_who_like_specific_candy():
     # Arrange
     friend_favorites = [
         [ "Sally", [ "lollipop", "bubble gum", "laffy taffy" ]],
@@ -33,7 +33,7 @@ def test_get_friends_who_like_candy_type():
     candy_type = "lollipop"
 
     # Act
-    result = get_friends_who_like_candy_type(data, candy_type)
+    result = get_friends_who_like_specific_candy(data, candy_type)
 
     # Assert
     assert result == ["Sally", "Bob"]
