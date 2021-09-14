@@ -3,7 +3,7 @@ DIRECTIONS
 ==========
 1. Given the list `friend_favorites`, create 
 a new data structure in the function `create_new_candy_data_structure` 
-that describes the different types of candy paired with a list of friends that 
+that describes the different kinds of candy paired with a list of friends that 
 like that candy. 
 
 friend_favorites = [
@@ -22,16 +22,12 @@ the data structure made in `create_new_candy_data_structure()`.
 
 '''
 
-
-
 def create_new_candy_data_structure(data):
-    candy_list = []
+    candy_list = set()
 
     for friend in data:
         for candy in friend[1]:
-            candy_list.append(candy)
-
-    unique_candy_list = list(set(candy_list))
+            candy_list.add(candy)
 
     new_data = {}
 
@@ -42,10 +38,9 @@ def create_new_candy_data_structure(data):
         friend_name = friend[0] 
         candy_list = friend[1]
         for candy in candy_list:
-            if candy in new_data.keys():
-                new_data[candy].append(friend_name)
-    return new_data
+            new_data[candy].append(friend_name)
 
+    return new_data
 
 def get_friends_who_like_candy_type(data, type):
     if type is None or data is None:
