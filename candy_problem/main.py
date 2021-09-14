@@ -27,7 +27,7 @@ the data structure made in `create_new_candy_data_structure()`.
 def create_new_candy_data_structure(data):
     candy_list = []
 
-    for friend in friend_favorites:
+    for friend in data:
         for candy in friend[1]:
             candy_list.append(candy)
 
@@ -38,7 +38,7 @@ def create_new_candy_data_structure(data):
     for candy in candy_list:
         new_data[candy] = []
 
-    for friend in friend_favorites:
+    for friend in data:
         friend_name = friend[0] 
         candy_list = friend[1]
         for candy in candy_list:
