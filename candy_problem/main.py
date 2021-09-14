@@ -1,7 +1,6 @@
 '''
 DIRECTIONS
 ==========
-
 1. Given the list `friend_favorites`, create 
 a new data structure in the function `create_new_candy_data_structure` 
 that describes the different types of candy paired with a list of friends that 
@@ -18,7 +17,7 @@ the data structure made in `create_new_candy_data_structure()`.
 '''
 
 friend_favorites = [
-    ["Sally", [ "lollipop”, “bubble gum", "laffy taffy"]],
+    ["Sally", [ "lollipop", "bubble gum", "laffy taffy"]],
     [ "Bob", ["milky way", "licorice", "lollipop"]],
 	[ "Arlene", ["chocolate bar", "milky way", "laffy taffy"]],
 	[ "Carlie", ["nerds", "sour patch kids", "laffy taffy"]]
@@ -26,7 +25,23 @@ friend_favorites = [
 
 
 def create_new_candy_data_structure(data):
-    pass 
+    candy_list = []
+    for friend in friend_favorites:
+        for candy in friend[1]:
+             candy_list.append(candy)
+
+    unique_candy_list = list(set(candy_list))
+
+    new_data = {}
+
+    for candy in candy_list:
+        new_data[candy] = []
+
+    print(new_data)
+    
+    
+
+create_new_candy_data_structure(friend_favorites)
 
 
 
